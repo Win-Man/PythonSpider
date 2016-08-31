@@ -2,8 +2,6 @@ from peewee import *
 
 db = MySQLDatabase(host='localhost', user='root', passwd='admin', database='test', charset='utf8', port=3306)
 
-
-
 class Person(Model):
     name = CharField()
     birthday = DateField()
@@ -90,8 +88,15 @@ class Jianshu_people(Model):
         database = db
 
 
+class CloudMusic_playlist(Model):
+    cover_url = CharField()
+    play_num = CharField()
+    name = CharField()
+    playlist_id = CharField()
+    create_user_id = CharField()
 
-
+    class Meta:
+        database = db
 
 if __name__ == '__main__':
     db.connect()
